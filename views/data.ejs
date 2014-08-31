@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title><%= title %></title>
+</head>
+<body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	var socket = io();
+	socket.on('data', function(msg) {
+		$('#data').text(msg);
+	});
+</script>
+
+<h1><%= title %></h1>
+<p><%= message %></p>
+<div id="data"></div>
+
+</body>
+</html>
